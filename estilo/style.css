@@ -1,0 +1,312 @@
+@charset "UTF-8";
+
+/*Importando Fonte do GOOGLEFONTS*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/*Importando fontes BAIXADAS*/
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+/*Paleta de Cores e Fontes - Global*/
+:root {
+    --cor0:#c5ebd6;
+    --cor1:#83e1ad;
+    --cor2:#3ddc84;
+    --cor3:#2fa866;
+    --cor4:#1a5c37;
+    --cor5:#063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque:'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive;
+}
+/*Tirando margem e preenchimento do site, para ser configurado por partes depois*/
+*{
+    margin: 0px;
+    padding: 0px ;
+}
+
+body{
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+}
+
+/*AFTER que dizer colocar alguma coisa APÓS*/
+a.externo::after {
+
+    /*
+    NÃO É COMPATIVÉL COM TODO NAVEGADOR
+    Colocando um emoji no lomk externo
+    CODIGO DO EMIJI: 1F517
+    CODIGO DO ESPAÇO: 00A0
+    */
+    content: '\00A0\1F517';
+}
+
+header{
+
+    /*Cor de fundo com degrade*/
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    /*Configurando a Altura do Cabeçalho*/
+    min-height: 150px;
+    /*Colocando o texto no centro*/
+    text-align: center;
+    /*Para descolar o texto superior da borda*/ 
+    padding-top: 40px;
+}
+
+header > h1 {
+
+    /*Cor da Fonte*/
+    color: white;
+    /*Fonte*/
+    font-family: var(--fonte-destaque);
+    /*Tamanho da Fonte*/
+    font-size: 3em;
+    font-weight: normal;
+    /*Deslocamento do texto superior (h1) do Paragrafo*/ 
+    margin-bottom: 20px;
+    /*Sombra*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);
+}
+
+header > p{
+
+    /*Fonte*/
+    font-family: var(--fonte-padrao);
+    /*Tamanho da Fonte*/
+    font-size: 1.2em;
+    /*Cor da Fonte*/
+    color: white;
+    /*Largura Máxima da Fonte*/
+    max-width: 500px;
+    /*Deslocamento das laterais da borda*/
+    padding-right: 10px;
+    padding-left: 10px;
+    /*Centralizando o texto*/
+    margin: auto;
+    margin-bottom: 30px;
+    /*Sombra*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);
+}
+
+nav{
+
+    /*Cor do Fundo da Navegação*/
+    background-color: var(--cor5);
+    /*Deslocamento geral (cima,baixo e lados)*/
+    padding: 10px;
+    /*Sombra: com 7px para baixo e espalhamento de 7px*/
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.192);
+}
+
+nav > a {
+
+    /*Cor do link*/
+    color: var(--cor1);
+    /*Deslocamento do link*/
+    padding: 10px;
+    /*Borda arredondada*/
+    border-radius: 5px;
+    /*Para tirar o sublilhado*/
+    text-decoration: none;
+    /*Negrito*/
+    font-weight: bold;
+    /*Transição ao passar o mouse*/
+    transition-duration: 0.3s;
+}
+
+/*Quando passar o mouse em cima muda a cor*/
+nav > a:hover {
+    background-color:  var(--cor3);
+    color:var(--cor5);
+}
+
+main{
+
+    /*Configuração da Responsividade*/
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    /*Margem em baixo para descolar o main de baixo*/ 
+    margin-bottom: 30px;
+    /*Para descolar o texto da lateral*/ 
+    padding: 20px;
+    /*Cor do Fundo do Main*/
+    background-color: white;
+    /*Colocando Sombra*/
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.445);
+    /*Colocando Borda arredondada só na parte de baixo*/
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main h1{
+    color: var(--cor5);
+    font-family: var(--fonte-android);
+    font-weight: normal;
+    font-size: 1.8em;
+}
+
+main h2{
+
+    /*Fonte*/
+    font-family: var(--fonte-android);
+    /*Cor da Fonte*/
+    color: var(--cor4);
+    /*Tamanho da Fonte*/
+    font-size: 1.3em;
+    font-weight: normal;
+    /*Cor de fundo:  degrade*/
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    /*O recuo (Paragrafo)*/
+    text-indent: 8px;
+
+}
+
+main p {
+
+    /*Para descolar o  texto do h1*/
+    margin: 15px 0px;
+    /*Margem Justificada*/
+    text-align: justify;
+    /*O recuo do Paragrafo*/
+    text-indent: 30px;
+    /*Tamanho da fonte*/
+    font-size: 1em;
+    /*Altura(espaçamento) das linhas*/
+    line-height: 2em;
+}
+
+main strong {
+
+    /*Cor da fonte*/
+    color: var(--cor4);
+    /*Negrito*/
+    font-weight: bold;
+    
+}
+
+main a {
+
+    /*Para tirar o sublilhado*/
+    text-decoration: none;
+    /*Negrito*/
+    font-weight: bold;
+    /*Cor da fonte*/
+    color: var(--cor5);
+    /*Cor do fundo*/
+    background-color: var(--cor1);
+    /*Descolamento de 2px de altura e 6px de largura*/
+    padding: 2px 6px;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor4);
+}
+
+main img{
+
+    /*Configuração da Responsividade*/
+    width: 100%;
+}
+
+main img.pequena{
+    /*Configuração da Responsividade*/
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+
+div.video {
+
+    /*Cor de fundo*/
+    background-color: var(--cor5);
+    /*Margem -20px de ambos os lados para a cor de fundo fica colada na magem de nav e 30px para ter uma margem de espaço em baixo*/
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    /*Deslocamento na parte de reprodução do video*/
+    padding-bottom: 59%;
+    /*Começa aqui a configuração de posiçãio do video*/
+    position: relative;
+}
+
+div.video > iframe {
+
+    /*Configuração de posição do video*/
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+
+}
+
+aside {
+
+    /*Cor do fundo*/
+    background-color: var(--cor1);
+    /*Descolamenro*/
+    padding: 10px;
+    /*Borda*/
+    border-radius: 10px;
+    /*Sombra*/
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281);
+}
+
+aside > h3 {
+
+    font-family: var(--fonte-android);
+    font-size: 1em;
+    font-weight: normal;
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;
+    /*
+    Margin (Margem):
+    Para formar um bloco arredodando com o resto do aside, utiliza-se a margem negativa para ela sair para fora;
+    Ficando -10px em cima, -10px na direita e na -10px na esquerda. Em baixo fixa 0px não mudando nada.
+    Border-radius (Borda Arredondada):
+    fica 10px para os dois lados superiores.
+    */
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+
+}
+
+aside > ul {
+
+    /*
+    NÃO É COMPATIVÉL COM TODO NAVEGADOR
+    Trocando a bolinha da lista por um emoji
+    CODIGO DO EMIJI: 2714
+    CODIGO DO ESPAÇO: 00A0
+    */
+    list-style-type: '\2714\00A0\00A0';
+    /*Possição das Bolinhas da Lista: nesse caso ficou inside (para dentro)*/
+    list-style-position: inside;
+    /*Dividir a lista em duas colunas*/
+    columns: 2;
+}
+
+footer{
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0,8em;
+    padding: 5px;
+}
+
+footer > p > a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor1);
+}
